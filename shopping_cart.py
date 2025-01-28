@@ -23,12 +23,20 @@ def Shopping():
                     quantity = int(input(f"Can you insert the quantity of your item number {i+1}: "))
                     Cost = price * quantity
                     total_price.append(Cost)
-                    print(f"The total price of your shop list of {quantity} {name}'s with each cost {price} is : {Cost}",)
+                    print(f"The total price of your shop list number {i+1} of {quantity} {name}'s with each cost {price} is : {Cost}",)
+                    agree= input("Do you want to proceed with this list (Y/N) : ")
+                    if agree == 'Y'or agree =='y':
+                        pass
+                    else:
+                        prob = True
+                        break     
                 except ValueError:
                     print("You have submitted in a wrong way")
                     break
+            if prob:
                 break
             for i in range (len(total_price)):
                 total = total+total_price[i] 
-            print("The total price for everything you bought is :",total)
-Shopping()
+                return total
+total_text=Shopping()
+print("The total price for everything you bought is :",total_text)
